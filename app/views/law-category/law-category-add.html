@@ -1,0 +1,65 @@
+<cus-panel dialog>
+    <phead>法律类目库编辑</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-text label="网卫引用编号" colspan="2" ngmodel="model.Id" ngdisabled="data"></cus-text>
+            <cus-text label="法律规则名称" colspan="2" ngmodel="model.Title"></cus-text>
+            <!-- <cus-text label="发文字号" colspan="2" ngmodel="model.No"></cus-text> -->
+            <cus-form label="发布部门">
+                <ui-select ng-model="selected.lawDepartment" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="lawDepartment in lawDepartments track by lawDepartment.Id">
+                        <span ng-bind="lawDepartment.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="发布日期">
+                <adm-dtp ng-model='model.issuedDate' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+            </cus-form>
+            <cus-form label="施行时间">
+                <adm-dtp ng-model='model.effectiveDate' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+            </cus-form>
+            <cus-form label="时效性">
+                <ui-select ng-model="selected.LawTimeValid" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="LawTimeValid in LawTimeValids track by LawTimeValid.Id">
+                        <span ng-bind="LawTimeValid.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="效力级别">
+                <ui-select ng-model="selected.LawCategory" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="LawCategory in LawCategories track by LawCategory.Id">
+                        <span ng-bind="LawCategory.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="法规类别">
+                <ui-select ng-model="selected.LawType" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="LawType in LawTypes track by LawType.Id">
+                        <span ng-bind="LawType.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <!-- <cus-text label="修改依据" colspan="2" ngmodel="model.Newer"></cus-text> -->
+            <cus-form label="正文">
+                <textarea class="form-control" rows="5" ng-model="model.Content"></textarea>
+            </cus-form>
+            <cus-text label="来源链接" colspan="2" ngmodel="model.Source"></cus-text>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">保存并提交审核</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

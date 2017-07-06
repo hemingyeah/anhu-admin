@@ -1,0 +1,49 @@
+<cus-panel dialog>
+    <phead>在线援助处理</phead>
+    <pbody>
+        <div class="online-deal">
+            <div class="customer">
+                <div class="simple">
+                    <h5 ng-bind="simple.Title"></h5>
+                    <div class="info">
+                        <div class="cus-col col-1">
+                            <label>问题类型:</label><span ng-bind="simple.CategoryName"></span>
+                        </div>
+                        <div class="cus-col col-2">
+                            <label>提交时间:</label><span ng-bind="simple.CreateTime | date:'yyyy-MM-dd hh:mm:ss'"></span>
+                        </div>
+                        <div class="cus-col col-3">
+                            <label>提交人:</label><span ng-bind="simple.UserName"></span>
+                        </div>
+                        <div class="cus-col col-4">
+                            <label>处理状态:</label><span ng-bind="simple.StatusName"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="cus-col col-1">
+                        <img src="/images/a0.jpg">
+                        <div ng-bind="simple.UserName"></div>
+                    </div>
+                    <div class="cus-col col-2">
+                        <div ng-bind="simple.Content"></div>
+                        <div class="row">
+                        	<div class="col-md-6 mgr-right-20 mgr-bottom20" ng-repeat="url in simple.Urls">
+                                <!-- <img ng-src="{{url + '?x-oss-process=image/resize,m_fill,h_100,w_140'}}"> -->
+                        		<img src="{{url}}?x-oss-process=image/resize,m_fill,h_100,w_140">
+                        	</div>
+                        </div>
+                        <div>
+                        	<span ng-bind="simple.EditTime | date:'yyyy-MM-dd hh:mm:ss'"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="admin"></div>
+        </div>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">发送</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

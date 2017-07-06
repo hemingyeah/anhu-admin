@@ -1,0 +1,27 @@
+<!-- list -->
+<ul class="nav">
+    <li class="hidden-folded padder m-t m-b-sm text-muted text-md">
+        <span>功能菜单</span>
+    </li>
+    <li ng-repeat="userMenu in userMenus">
+        <a class="auto" ng-if="userMenu.child.length">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+            <i class="icon iconfont {{userMenu.Icon}}"></i>
+            <span ng-bind="userMenu.PermissionName"></span>
+        </a>
+        <a href class="auto" ui-sref="{{userMenu.Comment}}" ng-if="!userMenu.child.length">
+            <i class="icon iconfont {{userMenu.Icon}}"></i>
+            <span ng-bind="userMenu.PermissionName"></span>
+        </a>
+        <ul class="nav nav-sub dk">
+            <li ui-sref-active="active" ng-repeat="childMenu in userMenu.child">
+                <a ui-sref="{{childMenu.Comment}}">
+                    <span ng-bind="childMenu.PermissionName"></span>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

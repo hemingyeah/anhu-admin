@@ -1,0 +1,64 @@
+<cus-panel dialog>
+    <phead>站内信编辑</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-form label="收件人">
+                <div class="search-good">
+                    <div class="input-group">
+                        <!-- <input id="search-good" class="form-control" ng-bind="" type="text" placeholder="请选择收件人" list="demo"> -->
+                        <div class="checkedInput">
+                            <span ng-repeat="selectedRole in selectedRoles" ng-show="selectedRoles">{{selectedRole.Name}}<b ng-click="event.deleteSelected(selectedRoles,$index)">&times;</b></span>
+                            <span ng-repeat="selectedUser in selectedUsers" ng-show="selectedUsers">{{selectedUser.Nickname}}<b ng-click="event.deleteSelected(selectedUsers,$index)">&times;</b></span>
+                        </div>
+                        <div class="input-group-addon click-down" ng-click="event.showSearchPanel()">
+                            <i ng-class="{true: 'fa fa-chevron-up', false: 'fa fa-chevron-down'}[operation.dropdown]"></i>
+                        </div>
+                        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    </div>
+                    <div class="dropdown-box" ng-show="operation.dropdown">
+                        <uib-tabset>
+                            <uib-tab index="0" heading="按用户角色群主选择">
+                                <div ng-controller="noticeRoleCtrl">
+                                    <cus-grid grid-config="gridOptions" edit="false" pagination="false" style="text-align: left;height: 200px;width: 100%"></cus-grid>
+                                    <div class="dropdown-box-bottom clearfix">
+                                        <button class="btn pull-right" ng-click="event.save()">确定</button>
+                                        <!-- <button class="btn pull-right">搜索</button> -->
+                                    </div>
+                                </div>
+                            </uib-tab>
+                            <uib-tab index="1" heading="按单注册用户选择">
+                                <div ng-controller="noticeUserCtrl">
+                                    <cus-grid grid-config="gridOptions" edit="false" style="text-align: left;height: 200px;width: 100%"></cus-grid>
+                                    <div class="dropdown-box-bottom clearfix">
+                                        <button class="btn pull-right" ng-click="event.save()">确定</button>
+                                        <!-- <button class="btn pull-right">搜索</button> -->
+                                    </div>
+                                </div>
+                            </uib-tab>
+                        </uib-tabset>
+                    </div>
+                </div>
+            </cus-form>
+            <cus-text label="标题" colspan="2" ngmodel="model.Title"></cus-text>
+            <cus-form label="类型">
+                <ui-select ng-model="selected.messageType" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="messageType in messageTypes track by $index">
+                        <span ng-bind="messageType.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="正文">
+                <cus-editor style="height: 260px" editor-id="notice" ng-model="model.Content"></cus-editor>
+            </cus-form>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;margin-right: 6px;" ng-disabled="form.$invalid" ng-click="event.sendTiming()">定时发送</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;margin-right: 6px;" ng-disabled="form.$invalid" ng-click="event.drafts()">保存为草稿</button>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.send()">发送</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

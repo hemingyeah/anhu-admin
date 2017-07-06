@@ -1,0 +1,67 @@
+<div class="photo-test word-test">
+    <div class="content-top">
+        <div class="top-info">输入文本</div>
+        <textarea class="form-control" placeholder="请输入要检测的文本"></textarea>
+        <div class="top-btn">
+            <button class="btn btn-ww">检测文本11111111111</button>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <div class="content-center">
+        <div class="paging-box clearfix word-test">
+            <div class="btn-group col-md-3">
+                历史检测记录
+            </div>
+            <div class="paging col-md-7 pull-right">
+                <span>共<strong>153</strong>件检测报告  <strong>1</strong>/<strong>13</strong> </span>
+                <span>
+                    <i class="fa fa-angle-left"></i>
+                    <i class="fa fa-angle-right active"></i>
+                </span>
+            </div>
+        </div>
+        <table class="table table-hover ww-list ww-list-word">
+            <tbody>
+                <tr ng-repeat="row in data">
+                    <td class="cus-col-1">
+                        <ul>
+                            <li><span>文本编号 : &nbsp</span><span ng-bind="row.title"></span></li>
+                            <li ng-bind="row.imgContent"></li>
+                        </ul>
+                    </td>
+                    <td class="cus-col-2">
+                        <ul>
+                            <li>
+                                <span>检测编号 : &nbsp</span><span ng-bind="row.code"></span>
+                            </li>
+                            <li>
+                                <span>检测时间 : &nbsp</span><span ng-bind="row.testTime"></span>
+                            </li>
+                        </ul>
+                    </td>
+                    <td class="cus-col-3">
+                        <ul>
+                            <li><span>检测状态 : &nbsp</span><button class="btn btn-xs bg-gold" ng-bind="row.state"></button></li>
+                            <li><span>匹配敏感词量 : &nbsp</span><span ng-bind="row.matchedNum"></span></li>
+                            <li><span>确认违禁词量 : &nbsp</span><span ng-bind="row.confirmedNum"></span></li>
+                        </ul>
+                    </td>
+                    <td class="cus-col-4">
+                        <ul>
+                            <li><a href="">查看详情</a></li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="paging-box paging-bottom clearfix">
+            <div class="paging col-md-7 pull-right">
+                <span>共<strong>153</strong>件检测报告  <strong>1</strong>/<strong>13</strong> </span>
+                <span>
+                <i class="fa fa-angle-left"></i>
+                <i class="fa fa-angle-right active"></i>
+            </span>
+            </div>
+        </div>
+    </div>
+</div>

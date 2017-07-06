@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" lang="zh_CN" id='data-ng-app' data-ng-app="app">
+
+<head>
+    <meta charset="utf-8" />
+    <title>安乎</title>
+    <meta name="description" content="app, web app, responsive, responsive layout, admin, admin panel, admin dashboard, flat, flat ui, ui kit, AngularJS, ui route, charts, widgets, components" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="styles/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="styles/animate.css" type="text/css" />
+    <link rel="stylesheet" href="styles/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="styles/simple-line-icons.css" type="text/css" />
+    <link rel="stylesheet" href="styles/font.css" type="text/css" />
+    <link rel="stylesheet" href="styles/app.css" type="text/css" />
+    <link rel="stylesheet/less" type="text/css" href="styles/page.less" />
+    <!-- <link rel="stylesheet" href="styles/public.css" type="text/css" /> -->
+    <link rel="stylesheet" href="styles/ag-grid/theme-fresh.css">
+    <link rel="stylesheet" type="text/css" href="bower-components/ui-select/dist/select.min.css">
+    <link rel="stylesheet" href="bower-components/adm-dtp/dist/ADM-dateTimePicker.css">
+    <link rel="stylesheet" type="text/css" href="bower-components/toastr/toastr.css">
+    <link rel="stylesheet" type="text/css" href="bower-components/wangEditor/dist/css/wangEditor.min.css">
+    <link rel="stylesheet" type="text/css" href="bower-components/zTree/css/zTreeStyle/zTreeStyle.css">
+    <!-- less.js -->
+    <script type="text/javascript" src="bower-components/less/dist/less.js"></script>
+    <base href="/">
+</head>
+
+<body ng-controller="AppCtrl">
+    <div class="app" id="app" ui-view></div>
+    <!-- jQuery -->
+    <script src="bower-components/jquery/dist/jquery.min.js"></script>
+    <!-- Angular -->
+    <script src="bower-components/angular/angular.js"></script>
+    <script src="bower-components/angular-animate/angular-animate.js"></script>
+    <script src="bower-components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower-components/angular-resource/angular-resource.js"></script>
+    <script src="bower-components/angular-sanitize/angular-sanitize.js"></script>
+    <!-- bower-components -->
+    <script src="vendor/angular/angular-ui-router/angular-ui-router.js"></script>
+    <script src="bower-components/ngstorage/ngStorage.js"></script>
+    <!-- ui-select -->
+    <script src="bower-components/ui-select/dist/select.min.js"></script>
+    <!-- bootstrap -->
+    <script src="bower-components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- lazyload -->
+    <script src="bower-components/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="bower-components/zTree/js/jquery.ztree.all.min.js"></script>
+    <!--  angular-breadcrumb  -->
+    <script src="bower-components/angular-breadcrumb/dist/angular-breadcrumb.js"></script>
+    <!-- ali-oss -->
+    <!-- <script src="bower-components/ali-oss/dist/aliyun-oss-sdk.min.js"></script> -->
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk.min.js"></script>
+    <!-- translate -->
+    <script src="vendor/angular/angular-translate/angular-translate.js"></script>
+    <script src="vendor/angular/angular-translate/loader-static-files.js"></script>
+    <script src="vendor/angular/angular-translate/storage-cookie.js"></script>
+    <script src="vendor/angular/angular-translate/storage-local.js"></script>
+    <script src="vendor/angular/angular-touch/angular-touch.js"></script>
+    <!-- echarts -->
+    <script src="bower-components/echarts/echarts-all.js"></script>
+    <script src="bower-components/echarts/theme/wangwei-theme.js"></script>
+    <script src="bower-components/echarts/ng-echarts.js"></script>
+    <!-- ag-grid -->
+    <script src="bower-components/ag-grid/dist/ag-grid-enterprise.js"></script>
+    <!-- adm-dtp -->
+    <script src="bower-components/adm-dtp/dist/ADM-dateTimePicker.js"></script>
+    <!-- toastr -->
+    <script src="bower-components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower-components/toastr/toastr.js"></script>
+    <!-- aliyun -->
+    <script src="bower-components/aliyun/oss-js-upload.js"></script>
+    <script src="bower-components/aliyun/sdk/aliyun-sdk.min.js"></script>
+    <!-- ui-select -->
+    <!-- wechat第三方登陆 -->
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <!-- QQ第三方登陆 -->
+    <script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101363978" data-redirecturi="http://service.51anhu.com/#/loginqq" charset="utf-8"></script>
+    <!-- 新浪第三方登陆 -->
+    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3380182504&debug=true" type="text/javascript" charset="utf-8"></script>
+    <!-- wangEditor -->
+    <script src="bower-components/wangEditor/dist/js/wangEditor.min.js"></script>
+    <!-- <html xmlns:wb="http://open.weibo.com/wb"> -->
+    <!--   <script src="bower-components/ui-select/dist/select.css"></script> -->
+    <!-- App -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/app-config.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/config.lazyload.js"></script>
+    <script src="scripts/config.router.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/services/ui-load.js"></script>
+    <script src="scripts/filters/fromNow.js"></script>
+    <script src="scripts/directives/setnganimate.js"></script>
+    <script src="scripts/directives/ui-butterbar.js"></script>
+    <script src="scripts/directives/ui-focus.js"></script>
+    <script src="scripts/directives/ui-fullscreen.js"></script>
+    <script src="scripts/directives/ui-jq.js"></script>
+    <script src="scripts/directives/ui-module.js"></script>
+    <script src="scripts/directives/ui-nav.js"></script>
+    <script src="scripts/directives/ui-scroll.js"></script>
+    <script src="scripts/directives/ui-shift.js"></script>
+    <script src="scripts/directives/ui-toggleclass.js"></script>
+    <script src="scripts/directives/ui-validate.js"></script>
+    <script src="scripts/controllers/bootstrap.js"></script>
+    <!-- custom directives -->
+    <script src="scripts/directives/public-components.js"></script>
+    <script src="scripts/directives/custom-grid.js"></script>
+    <script src="scripts/directives/custom-button.js"></script>
+    <!-- custom service -->
+    <script src="scripts/services/grid-service.js"></script>
+    <script src="scripts/services/button-service.js"></script>
+    <script src="scripts/services/common-api-service.js"></script>
+    <script src="scripts/services/data-exchange.js"></script>
+    <script src="scripts/services/http-service.js"></script>
+    <script src="scripts/services/dialog.js"></script>
+    <script src="scripts/services/http-interceptor.js"></script>
+    <script src="scripts/services/ztree-service.js"></script>
+    <!-- Lazy loading -->
+    <script type="text/javascript">
+    String.prototype.startsWith = function(str) {
+        if (str == null || str == "" || this.length == 0 || str.length > this.length)
+            return false;
+        if (this.substr(0, str.length) == str)
+            return true;
+        else
+            return false;
+        return true;
+    };
+/*文件上传*/
+    var FileUpload = {
+        BuildUploadObj: function() {
+            return new OssUpload(appConfig.aliyun.oss);
+        },
+        BuildUploadSetting: function(file, folder, done, error, progress) {
+            return {
+                file: file,
+                // key: folder + file.name,
+                key: folder + file.name.substr(file.name.lastIndexOf('.')),
+                maxRetry: 3,
+                headers: {
+                    'CacheControl': 'public',
+                    'Expires': '',
+                    'ContentEncoding': '',
+                    'ContentDisposition': '',
+                    'ServerSideEncryption': ''
+                },
+                onerror: error,
+                oncomplete: done,
+                onprogress: progress
+            };
+        },
+        BuildGUID: function() {
+            var s = [];
+            var hexDigits = "0123456789abcdef";
+            for (var i = 0; i < 36; i++) {
+                s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+            }
+            s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+            s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+            s[8] = s[13] = s[18] = s[23] = "-";
+
+            var uuid = s.join("");
+            return uuid;
+        }
+    };
+    </script>
+    <!--消息提示指令-->
+    <toaster-container toaster-options="{'close-button': true,'time-out':3000}"></toaster-container>
+</body>
+
+</html>

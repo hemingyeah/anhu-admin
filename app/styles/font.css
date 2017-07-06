@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url('../fonts/sourcesanspro/sourcesanspro-light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url('../fonts/sourcesanspro/sourcesanspro.woff') format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url('../fonts/sourcesanspro/sourcesanspro-bold.woff') format('woff');
+}
+
+/*阿里字体库*/
+
+
+@font-face {font-family: "iconfont";
+  src: url('../ali-fonts/iconfont.eot'); /* IE9*/
+  src: url('../ali-fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../ali-fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../ali-fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../ali-fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-setting:before { content: "\e60c"; }
+/*.icon-wechat:before { content: "\e603"; }*/
+.icon-danger-extremely:before { content: "\e605"; }
+/*.icon-weibo:before { content: "\e600"; }*/
+/*.icon-qq:before { content: "\e601"; }*/
+.icon-shop:before { content: "\e60d"; }
+.icon-pic:before { content: "\e602"; }
+.icon-danger:before { content: "\e607"; }
+.icon-text:before { content: "\e604"; }
+.icon-good:before { content: "\e606"; }
+.icon-user:before { content: "\e609"; }
+.icon-question:before { content: "\e608"; }
+.icon-envelope:before { content: "\e60a"; }
+.icon-right:before { content: "\e65a"; }
+
+

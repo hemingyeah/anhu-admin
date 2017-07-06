@@ -1,0 +1,40 @@
+<cus-panel dialog>
+    <phead>案例库管理</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-text label="案例编号" colspan="2" ngmodel="model.Id" ngdisabled="data"></cus-text>
+            <cus-text label="案例名称" colspan="2" ngmodel="model.Title"></cus-text>
+            <cus-form label="案例内容">
+                <textarea class="form-control" rows="5" ng-model="model.Content"></textarea>
+            </cus-form>
+            <cus-text label="案例字号" colspan="2" ngmodel="model.No"></cus-text>
+            <cus-text label="案例发布机构" colspan="2" ngmodel="model.Organization"></cus-text>
+            <cus-text label="案例来源网站" colspan="2" ngmodel="model.SourceOrganization"></cus-text>
+            <cus-form label="法律规则">
+                <ui-select multiple ng-model="selected.LawType" theme="bootstrap">
+                    <ui-select-match>
+                        <span>{{$item.LawTitle+$item.ItemTitle}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="LawType in LawTypes track by LawType.Id">
+                        <span>{{LawType.LawTitle+LawType.ItemTitle}}</span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-text label="来源标题" colspan="2" ngmodel="model.SourceTitle"></cus-text>
+            <div class="imgUpload">
+                <label>来源截图</label>
+                <div class="form-group">
+                    <cus-file accept="image/x-png,image/gif,image/jpg,image/jpeg">浏览文件</cus-file>
+                </div>
+            </div>
+            <cus-form label="来源发布时间">
+                <adm-dtp ng-model='model.SourcePublishTime' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+            </cus-form>
+            <cus-text label="来源链接" colspan="2" ngmodel="model.SourceUrl"></cus-text>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">保存并提交审核</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

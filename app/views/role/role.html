@@ -1,0 +1,18 @@
+<!-- 角色管理 -->
+<div class="photo-test notice">
+    <div class="content-top">
+        角色管理
+    </div>
+    <div class="content-center">
+        <div class="search-box row">
+            <form class="form-validation form-horizontal">
+                <div class="col-md-4">
+                    <cus-text label="用户名" placeholder="输入用户名" colspan="3" ngmodel="filter.EmployeeName"></cus-text>
+                </div>
+                <button class="btn btn-ww width-60 pull-right" ng-click="event.search()">查询</button>
+            </form>
+        </div>
+        <cus-button></cus-button>
+        <cus-grid grid-config="gridOptions" edit="false"></cus-grid>
+    </div>
+</div>

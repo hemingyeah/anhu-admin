@@ -1,0 +1,74 @@
+<div class="online-deal clearfix">
+    <div class="customer">
+        <div class="simple">
+            <div ng-bind="simple.Title" class="deal-title"></div>
+            <div class="info clearfix">
+                <div class="cus-col col-1">
+                    <label>问题类型:</label><span ng-bind="simple.CategoryName"></span>
+                </div>
+                <div class="cus-col col-2">
+                    <label>提交时间:</label><span ng-bind="simple.CreateTime | date:'yyyy-MM-dd hh:mm:ss'"></span>
+                </div>
+                <div class="cus-col col-3">
+                    <label>提交人:</label><span ng-bind="simple.UserName"></span>
+                </div>
+                <div class="cus-col col-4">
+                    <label>处理状态:</label><span ng-bind="simple.StatusName"></span>
+                </div>
+            </div>
+        </div>
+        <div class="detail clearfix">
+            <div class="cus-col col-1">
+                <img src="/images/anhu/icon-user.png">
+            </div>
+            <div class="cus-col col-2">
+                <div ng-bind="simple.Content"></div>
+                <div class="row">
+                    <div class="col-md-6 mgr-right-20 mgr-bottom20" ng-repeat="url in simple.Urls">
+                        <!-- <img ng-src="{{url}}"> -->
+                        <img src="{{url}}?x-oss-process=image/resize,m_fill,h_100,w_140">
+                    </div>
+                </div>
+                <div>
+                    <span ng-bind="simple.EditTime | date:'yyyy-MM-dd hh:mm:ss'"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="admin">
+        <div class="admin-content clearfix" ng-repeat="workPost in workPosts track by $index">
+            <div class="cus-col col-1">
+                <img src="/images/anhu/icon-admin.png" ng-if="!workPost.UserId">
+                <img src="/images/anhu/icon-user.png" ng-if="!workPost.Employee">
+            </div>
+            <div class="cus-col col-2">
+                <div ng-bind="workPost.Content"></div>
+                <div>
+                    <span ng-bind="workPost.EditTime"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="reply clearfix">
+        <textarea class="form-control" ng-model="model.Content"></textarea>
+        <div class="edit">
+            <!-- <input type="checkbox" name=""> -->
+            <button class="btn btn-ww width-80 pull-right" ng-click="event.reply()">回复</button>
+        </div>
+    </div>
+    <div class="evaluation">
+        <div class="cus-col col-1">
+            满意度:
+        </div>
+        <div class="cus-col col-2">
+            <stars rating-value="ratingVal" hover-value="hoverVal" max="max" on-hover="onHover" on-leave="onLeave"></stars>
+        </div>
+        <div class="clear-both">
+            <button class="btn btn-default width-80" ng-click="event.close()">关闭问题</button>
+        </div>
+    </div>
+</div>
+<!-- <div>
+    <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">发送</button>
+    <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+</div> -->

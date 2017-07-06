@@ -1,0 +1,8 @@
+<div>
+	<buttton ng-repeat="rowBtn in rowBtns | orderBy:'index'" 
+			ng-if="event[rowBtn.code]" ng-click="event[rowBtn.code](data)" 
+			class="mgr-right10 color-blue" style="line-height: 36px;">
+			<!-- <i class="{{baseBtn.icon}} color-8c"></i> -->
+			{{rowBtn.name}}
+	</button>
+</div>  

@@ -1,0 +1,12 @@
+<cus-panel dialog>
+    <phead>评分</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-text label="评分" colspan="2" ngmodel="model.score"></cus-text>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">保存</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

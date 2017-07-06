@@ -1,0 +1,145 @@
+{
+    "user": [{
+        "name": "图片检测",
+        "icon": "icon-pic",
+        "url": 　 "wlds.photo",
+        "child": []
+    }, {
+        "name": "文字检测",
+        "icon": "icon-text",
+        "url": "wlds.word",
+        "child": []
+    }, {
+        "name": "店铺检测",
+        "icon": "icon-shop",
+        "child": [{
+            "name": "店铺检测",
+            "url": "wlds.shop",
+            "icon": ""
+        }, {
+            "name": "商品检测",
+            "url": "wlds.goods",
+            "icon": ""
+        }]
+    }, {
+        "name": "设置",
+        "icon": "icon-setting",
+        "child": [{
+            "name": "账号设置",
+            "url": "wlds.account",
+            "icon": ""
+        }, {
+            "name": "检测用量管理",
+            "url": "wlds.amount",
+            "icon": ""
+        }]
+    }],
+    "employee": [{
+        "name": "广告位管理",
+        "icon": "icon-user",
+        "url": "admin.advert",
+        "child": []
+    }, {
+        "name": "站内信管理",
+        "icon": "icon-user",
+        "url": "admin.notice",
+        "child": []
+    }, {
+        "name": "帮助中心管理",
+        "icon": "icon-user",
+        "child": [{
+            "name": "在线援助管理",
+            "url": "admin.online",
+            "icon": ""
+        }, {
+            "name": "反馈意见管理",
+            "url": "admin.feedback",
+            "icon": ""
+        }, {
+            "name": "使用帮助管理",
+            "url": "admin.useage",
+            "icon": ""
+        }]
+    }, {
+        "name": "套餐管理",
+        "icon": "icon-user",
+        "child": [{
+            "name": "文字检测用量管理",
+            "url": "admin.wordpackage",
+            "icon": ""
+        }, {
+            "name": "   ",
+            "url": "admin.photopackage",
+            "icon": ""
+        }, {
+            "name": "组合套餐管理",
+            "url": "admin.grouppackage",
+            "icon": ""
+        }, {
+            "name": "营销活动管理",
+            "url": "admin.market",
+            "icon": ""
+        }, {
+            "name": "营销活动管理",
+            "url": "admin.customer",
+            "icon": ""
+        }]
+    }, {
+        "name": "客户管理",
+        "icon": "icon-user",
+        "child": [{
+            "name": "检测用量管理",
+            "url": "admin.dosage",
+            "icon": ""
+        }, {
+            "name": "客户信息管理",
+            "url": "admin.information",
+            "icon": ""
+        }, {
+            "name": "客户角色管理",
+            "url": "admin.userRole",
+            "icon": ""
+        }]
+    }, {
+        "name": "检测数据管理",
+        "icon": "icon-user",
+        "child": [{
+            "name": "图片检测",
+            "url": "admin.photo",
+            "icon": ""
+        }, {
+            "name": "文字检测",
+            "url": "admin.word",
+            "icon": ""
+        }, {
+            "name": "店铺检测",
+            "url": "admin.shop",
+            "icon": ""
+        }, {
+            "name": "商品检测",
+            "url": "admin.goods",
+            "icon": ""
+        }]
+    }, {
+        "name": "财务概况",
+        "icon": "icon-user",
+        "url": "admin.finance"
+    }, {
+        "name": "系统设置",
+        "icon": "icon-user",
+        "child": [{
+            "name": "用户管理",
+            "url": "admin.user",
+            "icon": ""
+        }, {
+            "name": "角色管理",
+            "url": "admin.role",
+            "icon": ""
+        }, {
+            "name": "类目查询",
+            "url": "admin.search",
+            "icon": ""
+        }]
+    }]
+}],
+}

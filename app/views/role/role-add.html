@@ -1,0 +1,13 @@
+<cus-panel dialog>
+    <pbody>
+        <cus-text label="用户名" colspan="2" ngmodel="model.Name"></cus-text>
+        <cus-checkbox label="用户权限管理"></cus-checkbox>
+        <cus-form label="功能权限：">
+            <ul class="ztree" id="tree" z-nodes="zNodes" setting="setting" z-tree-role></ul>
+        </cus-form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;margin-right: 6px;" ng-click="event.save()">保存</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

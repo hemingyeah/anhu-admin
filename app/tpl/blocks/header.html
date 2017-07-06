@@ -1,0 +1,40 @@
+<div class="main-header">
+    <ul class="header-center">
+        <li>
+            <a ui-sref="wlds.photo">
+                <img src="/images/anhu/logo.png">
+            </a>
+        </li>
+        <li class="dropdown" uib-dropdown>
+            <a href="" uib-dropdown-toggle>
+                <i class="icon iconfont icon-user"></i>
+                {{app.userName}}
+            </a>
+            <!-- dropdown -->
+            <ul class="dropdown-menu animated fadeInRight">
+                <!-- <li><a href="#/wlds/account">账号设置</a></li> -->
+                <li><a ui-sref="login">退出登录</a></li>
+            </ul>
+            <!-- / dropdown -->
+        </li>
+<!--         <li class="help-center uib-dropdown" uib-dropdown>
+            <a href class="dropdown-toggle" uib-dropdown-toggle>
+                <i class="icon iconfont icon-question"></i> 帮助中心
+            </a> -->
+            <!-- dropdown -->
+<!--             <ul class="dropdown-menu animated fadeInUp">
+                <li><a ui-sref="help.online">在线帮助</a></li>
+                <li><a ui-sref="help.feedback">意见反馈</a></li>
+                <li><a ui-sref="help.problem">我的提问</a></li>
+                <li><a ui-sref="help.usage">使用帮助</a></li>
+            </ul> -->
+            <!-- / dropdown -->
+        <!-- </li> -->
+<!--         <li class="notice-center uib-dropdown" uib-dropdown>
+            <a ui-sref="wlds.notice" class="dropdown-toggle" uib-dropdown-toggle>
+                <i class="icon iconfont icon-envelope"></i>
+                <span class="badge badge-sm up bg-gold pull-right-xs">2</span>
+            </a>
+        </li> -->
+    </ul>
+</div>

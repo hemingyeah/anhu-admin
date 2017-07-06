@@ -1,0 +1,12 @@
+<cus-panel dialog>
+    <phead>定时发送</phead>
+    <pbody>
+        <cus-form label="选择发送时间" colspan="3">
+            <adm-dtp ng-model='model.timing' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+        </cus-form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">发送</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

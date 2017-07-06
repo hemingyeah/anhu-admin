@@ -1,0 +1,27 @@
+<cus-panel dialog>
+    <phead>法律条文库编辑</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-text label="条文内容编号" colspan="2" ngmodel="model.Id" ngdisabled="data"></cus-text>
+            <!-- <cus-text label="法律规则名称" colspan="2" ngmodel="model.LawTitle"></cus-text> -->
+            <cus-form label="法律规则名称">
+                <ui-select ng-model="selected.LawItem" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Title"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="LawItem in LawItems track by LawItem.Id">
+                        <span ng-bind="LawItem.Title"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-text label="条款项目" colspan="2" ngmodel="model.ItemTitle"></cus-text>
+            <cus-form label="法律法规内容">
+                <textarea class="form-control" rows="5" ng-model="model.ItemContent"></textarea>
+            </cus-form>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">保存并提交审核</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

@@ -1,0 +1,63 @@
+<cus-panel dialog>
+    <phead>管理员编辑</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <!-- <cus-text label="用户编号" colspan="2" ngmodel="model.No" ngdisabled="data"></cus-text> -->
+            <!-- <cus-text label="用户名称" colspan="2" ngmodel="model.Name"></cus-text> -->
+            <cus-text label="用户名" colspan="2" ngmodel="model.NickName"></cus-text>
+            <cus-text label="密码" colspan="2" type="password" ngmodel="model.Password" ng-hide="data"></cus-text>
+            <cus-text label="确认密码" colspan="2" type="password" ngmodel="model.ConfirmPwd" ng-hide="data"></cus-text>
+            <!-- <cus-form label="所在部门">
+                <ui-select ng-model="selected.department" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.DeptName"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="department in departments track by department.Id">
+                        <span ng-bind="department.DeptName"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form> -->
+            <cus-text label="所在部门" colspan="2" placeholder="网卫科技" ngdisabled="true"></cus-text>
+            <cus-form label="生日">
+                <adm-dtp ng-model='model.Birthday' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+            </cus-form>
+            <cus-form label="性别 :" colspan="2">
+                <div class="radio">
+                    <label class="i-checks i-checks-sm">
+                        <input type="radio" ng-model="model.Gender" ng-value="true"><i></i> 男
+                    </label>
+                    <label class="i-checks i-checks-sm">
+                        <input type="radio" ng-model="model.Gender" ng-value="false"><i></i> 女
+                    </label>
+                </div>
+            </cus-form>
+            <cus-text label="电话" colspan="2" ngmodel="model.Mobile"></cus-text>
+            <cus-text label="邮箱" colspan="2" ngmodel="model.Email"></cus-text>
+            <cus-text label="身份证号" colspan="2" ngmodel="model.IdCard"></cus-text>
+            <cus-form label="用户角色">
+                <ui-select ng-model="selected.role" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="role in roles track by role.Id">
+                        <span ng-bind="role.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="本地员工 :" colspan="2">
+                <div class="radio">
+                    <label class="i-checks i-checks-sm">
+                        <input type="radio" ng-model="model.IsLocal" ng-value="true"><i></i> 是
+                    </label>
+                    <label class="i-checks i-checks-sm">
+                        <input type="radio" ng-model="model.IsLocal" ng-value="false"><i></i> 否
+                    </label>
+                </div>
+            </cus-form>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;margin-right: 6px;" ng-click="event.save()">保存</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

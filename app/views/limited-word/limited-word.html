@@ -1,0 +1,133 @@
+<!-- 在线援助 -->
+<div class="photo-test notice keyword">
+    <div class="content-top">
+        极限词库管理
+    </div>
+    <div class="search-box row">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>极限词</label>
+                    <input type="text" class="form-control" placeholder="极限词" ng-model="query.Keyword">
+                </div>
+                <div class="form-group">
+                    <label>行业类目</label>
+                    <ui-select ng-model="selected.industry" theme="bootstrap">
+                        <ui-select-match>
+                            <span ng-bind="$select.selected.Name"></span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="Industry in Industries track by Industry.Id">
+                            <span ng-bind="Industry.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="form-group">
+                    <label>极限词类型</label>
+                    <ui-select ng-model="selected.keywordCategory" theme="bootstrap">
+                        <ui-select-match>
+                            <span ng-bind="$select.selected.Name"></span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="keywordCategory in keywordCategorys track by keywordCategory.Id">
+                            <span ng-bind="keywordCategory.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">添加人</label>
+                    <ui-select ng-model="selected.addUser" theme="bootstrap">
+                        <ui-select-match>
+                            <span ng-bind="$select.selected.Name"></span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="userList in userLists track by userList.Id">
+                            <span ng-bind="userList.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">更新人</label>
+                    <ui-select ng-model="selected.refreshUser" theme="bootstrap">
+                        <ui-select-match>
+                            <span ng-bind="$select.selected.Name"></span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="userList in userLists track by userList.Id">
+                            <span ng-bind="userList.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <label>审核人</label>
+                        <ui-select ng-model="selected.reviewUser" theme="bootstrap">
+                            <ui-select-match>
+                                <span ng-bind="$select.selected.Name"></span>
+                            </ui-select-match>
+                            <ui-select-choices repeat="userList in userLists track by userList.Id">
+                                <span ng-bind="userList.Name"></span>
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>敏感程度</label>
+                        <input type="text" class="form-control" placeholder="敏感程度" ng-model="query.sensitivity">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">添加时间</label>
+                    <div class="clearfix">
+                        <div class="cus-col cus-col-1">
+                            <adm-dtp ng-model='query.createBeginTime' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+                        </div>
+                        <div class="cus-col cus-col-2">
+                            ~
+                        </div>
+                        <div class="cus-col cus-col-3">
+                            <adm-dtp ng-model='query.createEndTime' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">更新时间</label>
+                    <div class="clearfix">
+                        <div class="cus-col cus-col-1">
+                            <adm-dtp ng-model='query.updateBeginTime' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+                        </div>
+                        <div class="cus-col cus-col-2">
+                            ~
+                        </div>
+                        <div class="cus-col cus-col-3">
+                            <adm-dtp ng-model='query.updateEndTime' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">审核状态</label>
+                    <ui-select ng-model="selected.statusList" theme="bootstrap">
+                        <ui-select-match>
+                            <span ng-bind="$select.selected.Name"></span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="statusList in statusLists track by statusList.Id">
+                            <span ng-bind="statusList.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 clearfix">
+            <button class="btn btn-ww width-60 pull-right" ng-click="event.search()">查询</button>
+            <button class="btn btn-default width-60 pull-right mgr-right20" ng-click="event.clear()">清空</button>
+        </div>
+    </div>
+    <div class="content-center">
+        <cus-button></cus-button>
+        <div class="fileImport"><cus-file accept=".xls">批量导入</cus-file></div>
+        <!-- <form action="http://180.76.160.7:82/api/Keyword/Keyword_PostKeywordFile" enctype="multipart/form-data" method="post">
+            <input type="file" name="datafile" size="40">
+            <input type="submit" value="Send">
+        </form> -->
+        <cus-grid grid-config="gridOptions" edit="false"></cus-grid>
+    </div>
+</div>

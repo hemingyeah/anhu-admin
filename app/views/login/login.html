@@ -1,0 +1,50 @@
+<!-- 登录 -->
+<div class="login">
+    <div class="header">
+        <div class="header-logo">
+            <a href="" class="logo"></a>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle-center">
+            <div class="title">
+                <p>安乎商业内容安全检测后台管理系统</p>
+                <p>扫图片 查违禁 防打假</p>
+            </div>
+            <div class="login-box">
+                <div class="login-top">
+                    <form name="form" class="form-validation">
+                        <div class="form-group cus-form"><strong>账号登录</strong></div>
+                        <div class="form-group cus-form">
+                            <label class="hidden">账号</label>
+                            <input type="text" class="form-control" placeholder="用户名" required ng-model="model.account">
+                        </div>
+                        <div class="form-group">
+                            <label class="hidden ">密码</label>
+                            <input type="password" class="form-control" placeholder="密码" required ng-model="model.password">
+                        </div>
+                        <div class="form-group cus-form clearfix">
+    <!--                         <span class="pull-left "><a href="">忘记登录密码</a></span><span class="pull-right "><i class="fa fa-chevron-circle-right"></i><a href="#/signup">注册</a></span> -->
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-ww btn-lg" ng-disabled="form.$invalid" ng-click="event.login($event)">登录</button>
+                        </div>
+                    </form>
+                </div>
+<!--                 <ul class="login-bottom">
+                    <li>第三方账号登录</li>
+                    <li>
+                        <a class="icon-account icon-weibo" href="javascript:; " title="用新浪微博账号登录" ng-click="event.loginWeibo()"></a>
+                    </li>
+                    <li>
+                        <a class="icon-account icon-qq" href="javascript:; " title="用QQ账号登录 " ng-click="event.loginQQ()"></a>
+                    </li>
+                    <li>
+                        <a class="icon-account icon-wechat" href="javascript:; " title="用微信账号登录" ng-click="event.loginWechat()"></a>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+    <div class="footer">2016 杭州知珠网络科技有限公司 版权所有 浙ICP备16031790号</div>
+</div>

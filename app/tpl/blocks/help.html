@@ -1,0 +1,23 @@
+<!-- 系统头部栏 -->
+<div data-ng-include=" 'tpl/blocks/header.html' "></div>
+<div ng-show="app.usage" class="only-usage">
+    <div class="input-group">
+        <input type="text" name="" class="form-control" placeholder="问题搜索">
+        <div class="input-group-addon" ng-click="event.searchProblems()"><i class="fa fa-search"></i></div>
+    </div>
+</div>
+<div class="current-route">
+    <ol class="route">
+        <li>当前所在位置</li>
+        <span ng-show="curLocation.parentState" class="fa fa-angle-right"></span>
+        <li ng-show="curLocation.parentState"><a href="{{curLocation.parentState.href}}">{{curLocation.parentState.name}}</a></li>
+        <span class="fa fa-angle-right"></span>
+        <li class="active"><a href="{{curLocation.href}}">{{curLocation.name}}</a></li>
+    </ol>
+</div>
+<div class="main-center">
+    <div ui-view>
+    </div>
+</div>
+<!-- 系统脚部栏 -->
+<div data-ng-include=" 'tpl/blocks/footer.html' "></div>

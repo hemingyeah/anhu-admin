@@ -1,0 +1,25 @@
+<cus-panel dialog>
+    <phead>广告位编辑</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-form label="广告图片">
+                <div class="row">
+                    <div class="col-md-8">
+                        <cus-file>本地上传文件检测</cus-file>
+                    </div>
+                    <div class="col-md-4" ng-show="files" ng-repeat="file in files">
+                        <uib-progressbar max="100" value="file.progress">
+                            <span style="color:white; white-space:nowrap;">{{file.progress}} %</span>
+                        </uib-progressbar>
+                    </div>
+                </div>
+            </cus-form>
+            <cus-text label="广告标题" colspan="2" ngmodel="model.name" Required></cus-text>
+            <cus-text label="广告链接" colspan="2" ngmodel="model.targetUrl"></cus-text>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;margin-right: 6px;" ng-disabled="form.$invalid" ng-click="event.save()">保存</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

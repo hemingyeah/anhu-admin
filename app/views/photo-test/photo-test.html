@@ -1,0 +1,183 @@
+<!-- 图片检测 -->
+<div class="photo-test">
+    <div class="content-top">
+        <h3>图片检测</h3>
+    </div>
+    <div class="search-box row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>检测编号</label>
+                <input type="text" class="form-control" placeholder="检测编号" ng-model="query.no">
+            </div>
+            <div class="form-group">
+                <label>检测时间</label>
+                <adm-dtp ng-model='query.createBeginTime' full-data="date11_detail" maxdate="{{date12_detail.unix}}"></adm-dtp>
+            </div>
+            <div class="form-group">
+                <label>安全等级</label>
+                <input type="text" class="form-control" placeholder="安全等级" ng-model="query.rank">
+            </div>
+            <div class="form-group">
+                <label>账号名称</label>
+                <input type="text" class="form-control" placeholder="账号名称" ng-model="query.userName">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>图片名称</label>
+                <input type="text" class="form-control" placeholder="图片名称" ng-model="query.imageName">
+            </div>
+            <div class="form-group">
+                <label>检测状态</label>
+                <!-- <input type="text" class="form-control"> -->
+                <ui-select ng-model="query.detectStatus" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="detect in detectStatus track by $index">
+                        <span ng-bind="detect.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+            <div class="form-group">
+                <label>匹配敏感词</label>
+                <div class="clearfix">
+                    <div class="cus-col cus-col-1">
+                        <input type="num" class="form-control" ng-model="query.keywordCountMin">
+                    </div>
+                    <div class="cus-col cus-col-2">
+                        ~
+                    </div>
+                    <div class="cus-col cus-col-1">
+                        <input type="num" class="form-control" ng-model="query.keywordCountMax">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>角色类型</label>
+                <!-- <input type="text" class="form-control"> -->
+                <ui-select ng-model="query.roleName" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="role in roles track by $index">
+                        <span ng-bind="role.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>图片内容</label>
+                <input type="text" class="form-control" placeholder="图片内容">
+            </div>
+            <div class="form-group">
+                <label>安全分数</label>
+                <input type="text" class="form-control" placeholder="安全分数" ng-model="query.score">
+            </div>
+            <div class="form-group">
+                <label>确认敏感词</label>
+                <div class="clearfix">
+                    <div class="cus-col cus-col-1">
+                        <input type="num" class="form-control" ng-model="query.confirmCountMin">
+                    </div>
+                    <div class="cus-col cus-col-2">
+                        ~
+                    </div>
+                    <div class="cus-col cus-col-1">
+                        <input type="num" class="form-control" ng-model="query.confirmCountMax">
+                    </div>
+                </div>
+            </div>
+            <div class="mgr-top40 clearfix">
+                <button class="btn btn-ww width-60 pull-right" ng-click="event.search()">查询</button>
+                <button class="btn btn-default width-60 pull-right mgr-right20" ng-click="event.clear()">清空</button>
+            </div>
+        </div>
+    </div>
+    <div class="content-center">
+        <div class="paging-box clearfix">
+            <div class="btn-group col-md-3">
+                <button type="button" class="btn btn-default" ng-click="event.sortBy('editTime')">编辑时间</button>
+                <button type="button" class="btn btn-default" ng-click="event.sortBy('createTime')">检测时间</button>
+            </div>
+            <div class="paging col-md-7 col-md-offset-2">
+                <ul class="paging-overview">
+                    <li class="li">共</li>
+                    <li ng-bind="page.total"></li>
+                    <li>件检测报告</li>
+                    <li ng-bind="page.pageNum"></li>
+                    <li>/</li>
+                    <li ng-bind="page.pages"></li>
+                </ul>
+                <ul uib-pagination total-items="page.total" ng-model="page.pageNum" items-per-page="
+                    page.pageSize" class="pagination-sm" boundary-link-numbers="true" rotate="false" template-url="/tpl/blocks/pagination.html" ng-change="event.pageChanged()">
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div class="table-no-data" ng-show="!data">
+                <div><img src="images/anhu/icon/icon-info.png">暂无记录</div>
+            </div>
+            <table class="table table-hover ww-list">
+                <tbody>
+                    <tr ng-repeat="row in data track by $index">
+                        <td class="cus-col-1">
+                            <div class="test-title"><span>图片名称 : &nbsp</span><span ng-bind="row.imageName" class="fileName"></span></div>
+                            <div class="test-content clearfix">
+                                <img src="{{row.imagePath}}?x-oss-process=image/resize,m_fill,h_80,w_80" ng-click="event.showBigImg(row.imagePath)" class="img-thumbnail">
+                                <ul class="text-words">
+                                    <li ng-bind="row.textContent"></li>
+                                    <li><span>编辑时间 : &nbsp</span><span ng-bind="row.editTime | date: 'yyyy-MM-dd HH:mm:ss'"></span></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="cus-col-2">
+                            <ul>
+                                <li>
+                                    <span>检测编号 : &nbsp</span><span ng-bind="row.no"></span>
+                                </li>
+                                <li>
+                                    <span>检测时间 : &nbsp</span><span ng-bind="row.createTime | date: 'yyyy-MM-dd HH:mm:ss'"></span>
+                                </li>
+                            </ul>
+                        </td>
+                        <td class="cus-col-3">
+                            <ul>
+                                <!--<li><span>检测状态 : &nbsp</span>
+                                     <button class="btn btn-xs bg-gold" ng-bind="row.status.name"></button>
+                                </li> -->
+                                <li>
+                                    <span ng-bind="row.score" class="score mgr-right10" ng-class="{'color-success': row.isSuccess, 'color-info': row.isInfo, 'color-warning': row.isWarning, 'color-danger': row.isDanger}"></span>
+                                    <span ng-bind="row.rank" class="highlight" ng-class="{'color-success': row.isSuccess, 'color-info': row.isInfo, 'color-warning': row.isWarning, 'color-danger': row.isDanger}"></span>
+                                </li>
+                                <li><span>匹配敏感词量 : &nbsp</span><span ng-bind="row.keywordCount"></span></li>
+                                <li><span>确认违禁词量 : &nbsp</span><span ng-bind="row.confirmedCount"></span></li>
+                            </ul>
+                        </td>
+                        <td class="cus-col-4">
+                            <ul>
+                                <li><a ui-sref="admin.photo_detail({id: row.id})">查看详情</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="paging-box paging-bottom clearfix">
+            <div class="paging col-md-7 pull-right">
+                <ul class="paging-overview">
+                    <li class="li">共</li>
+                    <li ng-bind="page.total"></li>
+                    <li>件检测报告</li>
+                    <li ng-bind="page.pageNum"></li>
+                    <li>/</li>
+                    <li ng-bind="page.pages"></li>
+                </ul>
+                <ul uib-pagination total-items="page.total" ng-model="page.pageNum" items-per-page="
+            page.pageSize" class="pagination-sm" boundary-link-numbers="true" rotate="false" template-url="/tpl/blocks/pagination.html" ng-change="event.pageChanged()">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

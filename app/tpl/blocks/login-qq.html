@@ -1,0 +1,19 @@
+<div ng-show="!isFirstLogin">
+    <cus-panel >
+        <phead>绑定手机号</phead>
+        <pbody>
+            <form name="form" class="form-validation form-horizontal account">
+                <cus-form label="手机号码 &nbsp:" colspan="2">
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="account" id="inputEmail3" placeholder="手机号码" ng-model="model.mobile" required>
+                        <span id="validateSMS" class="input-group-addon btn" ng-disabled="!model.mobile" ng-bind="configMobile" ng-click="event.validateSMS()"></span>
+                    </div>
+                </cus-form>
+                <cus-text label="验证码 &nbsp:" colspan="2" ngmodel="model.randonCode"></cus-text>
+            </form>
+        </pbody>
+        <pfoot>
+            <button class="btn btn-ww width-60" ng-click="event.save()">确定</button>
+        </pfoot>
+    </cus-panel>
+</div>

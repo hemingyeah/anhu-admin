@@ -1,0 +1,66 @@
+<cus-panel dialog>
+    <phead>极限词新增</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-text label="极限词" colspan="2" ngmodel="model.Name"></cus-text>
+            <cus-text label="敏感程度" colspan="2" ngmodel="model.Weight"></cus-text>
+            <cus-form label="行业类目">
+                <ui-select multiple ng-model="selected.industries" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$item.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="Industry in Industries track by Industry.Id">
+                        <span ng-bind="Industry.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="限制行业">
+                <ui-select multiple ng-model="selected.limitedIndustries" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$item.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="Industry in Industries track by Industry.Id">
+                        <span ng-bind="Industry.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="极限词类型">
+                <ui-select ng-model="selected.keywordCategory" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$select.selected.Name"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="keywordCategory in keywordCategorys track by keywordCategory.Id">
+                        <span ng-bind="keywordCategory.Name"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="法律规则">
+                <ui-select multiple ng-model="selected.lawItems" theme="bootstrap">
+                    <ui-select-match>
+                        <span>{{$item.LawTitle+$item.ItemTitle}}</span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="lawItem in lawItems track by lawItem.Id">
+                        <span>{{lawItem.LawTitle+lawItem.ItemTitle}}</span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="相关案例">
+                <ui-select multiple ng-model="selected.lawDepartment" theme="bootstrap">
+                    <ui-select-match>
+                        <span ng-bind="$item.Title"></span>
+                    </ui-select-match>
+                    <ui-select-choices repeat="lawDepartment in lawDepartments track by lawDepartment.Id">
+                        <span ng-bind="lawDepartment.Title"></span>
+                    </ui-select-choices>
+                </ui-select>
+            </cus-form>
+            <cus-form label="备注">
+                <textarea class="form-control" rows="5" ng-model="model.Comment"></textarea>
+            </cus-form>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">保存并提交审核</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

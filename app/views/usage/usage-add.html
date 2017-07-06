@@ -1,0 +1,34 @@
+<cus-panel dialog>
+    <phead>使用帮助编辑</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-text label="标题" colspan="2" ngmodel="model.Title"></cus-text>
+            <cus-form label="类型">
+            <div class="row">
+                <div class="col-md-8">
+                    <ui-select ng-model="selected.usage" theme="bootstrap">
+                        <ui-select-match>
+                            <span ng-bind="$select.selected.Name"></span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="usage in usages track by usage.Id">
+                            <span ng-bind="usage.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-ww width-120 form-control" ng-click="event.postCommonCategory()">添加类型</button>
+                </div>
+            </div>
+            </cus-form>
+            <cus-text label="权重" colspan="2" ngmodel="model.DisplayNo"></cus-text>
+            <cus-form label="正文">
+                <cus-editor style="height: 260px" editor-id="notice" ng-model="model.Content"></cus-editor>
+            </cus-form>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;margin-right: 6px;" ng-disabled="form.$invalid" ng-click="event.save()">保存</button>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.publish()">发布</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

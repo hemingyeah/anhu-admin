@@ -1,0 +1,17 @@
+<cus-panel dialog>
+    <phead>审核</phead>
+    <pbody>
+        <form name="form" class="form-validation form-horizontal">
+            <cus-form label="审核理由">
+                <textarea class="form-control" rows="5" ng-model="model.Reason"></textarea>
+            </cus-form>
+            <cus-form label="审核通过">
+                <cus-switch ng-model="model.Status"></cus-switch>
+            </cus-form>
+        </form>
+    </pbody>
+    <pfoot>
+        <button class="btn m-b-xs btn-info" style="min-width:90px;" ng-click="event.save()">保存</button>
+        <button class="btn m-b-xs btn-default" style="min-width:90px;" ng-click="event.close()">关闭</button>
+    </pfoot>
+</cus-panel>

@@ -1,0 +1,143 @@
+[{
+    "state": "login",
+    "url": "/login",
+    "name": "登录",
+    "controller": "loginCtrl",
+    "templateUrl": "views/login/login.html",
+    "resolve": {
+        "deps": ["views/login/script/login-service.js",
+            "views/login/script/login-controller.js"
+        ]
+    }
+}, {
+    "state": "signup",
+    "url": "/signup",
+    "name": "注册",
+    "controller": "signupCtrl",
+    "templateUrl": "views/signup/signup.html",
+    "resolve": {
+        "deps": ["views/signup/script/signup-service.js",
+            "views/signup/script/signup-controller.js"
+        ]
+    }
+}, {
+    "state": "wlds",
+    "url": "/wlds",
+    "name": "极限词",
+    "templateUrl": "tpl/blocks/main.html"
+}, {
+    "state": "wlds.photo",
+    "url": "/photo",
+    "name": "图片检测",
+    "controller": "photoTestCtrl",
+    "templateUrl": "views/photo-test/photo-test.html",
+    "resolve": {
+        "deps": ["views/photo-test/script/photo-test-service.js",
+            "views/photo-test/script/photo-test-controller.js"
+        ]
+    }
+}, {
+    "state": "wlds.word",
+    "url": "/word",
+    "name": "文字检测",
+    "controller": "wordTestCtrl",
+    "templateUrl": "views/word-test/word-test.html",
+    "resolve": {
+        "deps": ["views/word-test/script/word-test-service.js",
+            "views/word-test/script/word-test-controller.js"
+        ]
+    }
+}, {
+    "state": "wlds.shop",
+    "url": "/shop",
+    "name": "店铺检测",
+    "controller": "shopTestCtrl",
+    "templateUrl": "views/shop-test/shop-test.html",
+    "resolve": {
+        "deps": ["views/shop-test/script/shop-test-service.js",
+            "views/shop-test/script/shop-test-controller.js"
+        ]
+    }
+}, {
+    "state": "wlds.good",
+    "url": "/good",
+    "name": "商品检测",
+    "controller": "goodTestCtrl",
+    "templateUrl": "views/good-test/good-test.html",
+    "resolve": {
+        "deps": ["views/good-test/script/good-test-service.js",
+            "views/good-test/script/good-test-controller.js"
+        ]
+    }
+}, {
+    "state": "wlds.account",
+    "url": "/account",
+    "name": "账号设置",
+    "controller": "accountCtrl",
+    "templateUrl": "views/account/account.html",
+    "resolve": {
+        "deps": ["views/account/script/account-service.js",
+            "views/account/script/account-controller.js"
+        ]
+    }
+}, {
+    "state": "wlds.amount",
+    "url": "/amount",
+    "name": "检测用量",
+    "controller": "amountCtrl",
+    "templateUrl": "views/amount/amount.html",
+    "resolve": {
+        "deps": ["views/amount/script/amount-service.js",
+            "views/amount/script/amount-controller.js"
+        ]
+    }
+}, {
+    "state": "help",
+    "url": "/help",
+    "name": "帮助中心",
+    "templateUrl": "views/blocks/help.html"
+}, {
+    "state": "help.online",
+    "url": "/online",
+    "name": "在线援助",
+    "controller": "onlineCtrl",
+    "templateUrl": "views/online/online.html",
+    "resolve": {
+        "deps": ["views/online/script/online-service.js",
+            "views/online/script/online-controller.js"
+        ]
+    }
+}, {
+    "state": "help.feedback",
+    "url": "/feedback",
+    "name": "意见反馈",
+    "controller": "feedbackCtrl",
+    "templateUrl": "views/feedback/feedback.html",
+    "resolve": {
+        "deps": ["views/feedback/script/feedback-service.js",
+            "views/feedback/script/feedback-controller.js"
+        ]
+    }
+}, {
+    "state": "help.problem",
+    "url": "/problem",
+    "name": "我的提问",
+    "controller": "problemCtrl",
+    "templateUrl": "views/problem/problem.html",
+    "resolve": {
+        "deps": ["views/problem/script/problem-service.js",
+            "views/problem/script/problem-controller.js"
+        ]
+    }
+}, {
+    "state": "help.usage",
+    "url": "/usage",
+    "name": "使用帮助",
+    "controller": "usageCtrl",
+    "templateUrl": "views/usage/usage.html",
+    "resolve": {
+        "deps": ["views/usage/script/usage-service.js",
+            "views/usage/script/usage-controller.js"
+        ]
+    }
+}]
